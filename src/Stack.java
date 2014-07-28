@@ -8,6 +8,15 @@
  *
  * @author Kevin
  */
+
+/*
+Kevin Garcia 13177
+Luis Avila 13077
+Vidal Villegas 13023
+
+Pila que guarda los valores de las operaciones
+*/
+
 public class Stack {
     private double[] _array;
     
@@ -28,8 +37,6 @@ public class Stack {
             arrayTemp = new double[1];  
         }        
         arrayTemp[arrayTemp.length-1] = valor;
-        
-        //double[] _array = new double[arrayTemp.length];
         _array = arrayTemp;       
     }
     
@@ -44,7 +51,6 @@ public class Stack {
                 arrayTemp[i]=_array[i+1];
             }
             double valor = _array[0];
-            //double[] _array = new double[arrayTemp.length];
             _array = arrayTemp;
             return valor;
         }
