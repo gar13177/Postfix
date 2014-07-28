@@ -46,7 +46,7 @@ public class Postfix {
         double resultado = postfix.getResultado();
         
         //se imprime el resulado 
-        System.out.println(resultado);
+        System.out.println("Resultado: "+resultado);
 
     }
     
