@@ -24,20 +24,24 @@ public class Stack {
         }
         arrayTemp[arrayTemp.length] = valor;
         
-        double[] _array = new double[arrayTemp.length];
+        //double[] _array = new double[arrayTemp.length];
         _array = arrayTemp;       
     }
     
     public double Pop(){
-        double[] arrayTemp = new double[_array.length-1];
-        for (int i=0; i<arrayTemp.length;i++){
-            arrayTemp[i]=_array[i+1];
+        if (_array.length == 0){
+            System.out.println("Error, pila vacia");
+            return 0;
+        }else{
+            double[] arrayTemp = new double[_array.length-1];
+            for (int i=0; i<arrayTemp.length;i++){
+                arrayTemp[i]=_array[i+1];
+            }
+            double valor = _array[0];
+            //double[] _array = new double[arrayTemp.length];
+            _array = arrayTemp;
+            return valor;
         }
-        double valor = _array[0];
-        double[] _array = new double[arrayTemp.length];
-        _array = arrayTemp;
-        
-        return valor;
     }
     
     public void setStack(double[] array){
