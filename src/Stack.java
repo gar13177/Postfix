@@ -9,8 +9,7 @@
  * @author Kevin
  */
 public class Stack {
-    protected double[] _array;
-    
+    private double[] _array;
     
     public Stack(){}
     
