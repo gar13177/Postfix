@@ -26,19 +26,26 @@ public class Postfix {
         Scanner scan = new Scanner(System.in);
         
         
+        //Bienvenida e ingreso de cadena
+        //no validada ante programación defensiva 
         System.out.println("Bienvenido");
         System.out.println("Ingresa una cadena en formato Postfix");
         System.out.println("Separa cada operando y la operacion por medio de un espacio");
         System.out.println("Ejemplo: '3 4 +' = 3+4, '3 4 /' = 3/4");
         
+        //ingreso de la cadena
         _ingreso = scan.nextLine();
         
+        //creacion de un objeto postfix con constructor sobrecargado
         Operacion postfix = new Operacion(_ingreso);
+        //inicio de lectura de la cadena
         postfix.Lectura();
       
         
+        //guarda resultado tras realizar la lectura
         double resultado = postfix.getResultado();
         
+        //se imprime el resulado 
         System.out.println(resultado);
 
     }
