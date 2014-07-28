@@ -42,7 +42,7 @@ public class Stack {
     }
     
     public void setStack(double[] array){
-        double[] _array = array;
+        _array = array;
     }
     
     public double[] getStack(){
