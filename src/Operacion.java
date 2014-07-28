@@ -8,41 +8,66 @@
  *
  * @author Kevin
  */
+
+/*
+Kevin Garcia 13177
+Luis Avila 13077
+Vidal Villegas 13023
+
+Operacion permite la resolucion de una operacion en formato
+Postfix, con ella retorna el valor de la operacion
+*/
+
 public class Operacion {
     
-    private String[] _array;
+    private String _cadena;
+    private Stack _pila = new Stack();
     
     public Operacion(){}
     
-    public Operacion(String[] array){
-        _array = array;
-    } 
+    public Operacion(String cadena){
+        _cadena = cadena;
+    }
     
-    public double Calculo(){
-        double resultado;
+    public void Lectura(){
+        String[] array = _cadena.split(" ");
+        double operando1;
+        double operando2;
         
-        for (int i=0; i<=(_array.length-3); i=i+2){
-            IdentiOperacion(_array[i],_array[i+1],_array[i+2]);
+        for (int i =0; i<array.length; i++){
+            if (array[i].equals("+")){
+                operando1 = _pila.Pop();
+                operando2 = _pila.Pop();
+                _pila.Push(operando1+operando2);
+            }else if (array[i].equals("-")){
+                operando1 = _pila.Pop();
+                operando2 = _pila.Pop();
+                _pila.Push(operando1-operando2);
+            }else if (array[i].equals("*")){
+                operando1 = _pila.Pop();
+                operando2 = _pila.Pop();
+                _pila.Push(operando1*operando2);
+            }else if (array[i].equals("/")){
+                operando1 = _pila.Pop();
+                operando2 = _pila.Pop();
+                _pila.Push(operando1/operando2);
+            }else{
+                _pila.Push(Double.parseDouble(array[i]));
+            }
+            System.out.print(_pila);
         }
-        
-        return resultado;
     }
     
-    public String IdentiOperacion(String operando1, String operando2, String operacion){
-        String resultado;
-        double a = Double.parseDouble(operando1);
-        double b = Double.parseDouble(operando2);
-        
-        if (operacion.equals("+"))
-            resultado = ""+(a+b);
-        else if (operacion.equals("-"))
-            resultado = ""+(a-b);
-        else if (operacion.equals("*"))
-            resultado = ""+(a*b);
-        else
-            resultado = ""+(a/b);
-               
-        return resultado;
+    
+    public String getCadena(){
+        return _cadena;
     }
     
+    public void setCadena(String cadena){
+        _cadena = cadena;
+    }
+    
+    public double getResultado(){
+        return _pila.Pop();
+    }
 }
