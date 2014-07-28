@@ -18,11 +18,16 @@ public class Stack {
     }
     
     public void Push(double valor){
-        double[] arrayTemp = new double[_array.length +1];
-        for (int i = 0; i< _array.length; i++){
-            arrayTemp[i] = _array[i];                    
-        }
-        arrayTemp[arrayTemp.length] = valor;
+        double[] arrayTemp;
+        try{
+            arrayTemp = new double[_array.length + 1];
+            for (int i = 0; i< _array.length; i++){
+                arrayTemp[i] = _array[i];
+            }
+        } catch (Exception e){
+            arrayTemp = new double[1];  
+        }        
+        arrayTemp[arrayTemp.length-1] = valor;
         
         //double[] _array = new double[arrayTemp.length];
         _array = arrayTemp;       
@@ -33,7 +38,8 @@ public class Stack {
             System.out.println("Error, pila vacia");
             return 0;
         }else{
-            double[] arrayTemp = new double[_array.length-1];
+            double[] arrayTemp;
+            arrayTemp = new double[_array.length-1];
             for (int i=0; i<arrayTemp.length;i++){
                 arrayTemp[i]=_array[i+1];
             }
@@ -52,4 +58,11 @@ public class Stack {
         return _array;
     }
     
+    public String toString(){
+        String cadena = "";
+        for (int i = 0; i<_array.length; i++){
+            cadena = cadena + _array[i]+"\n";
+        }
+        return cadena+"--------\n";
+    }
 }
