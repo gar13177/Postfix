@@ -34,16 +34,13 @@ public class Postfix {
         _ingreso = scan.nextLine();
         
         Operacion postfix = new Operacion(_ingreso);
-        
-        postfix.Calculo();
+        postfix.Lectura();
+      
         
         double resultado = postfix.getResultado();
         
         System.out.println(resultado);
-        
-        
-        
-        
+
     }
     
 }
