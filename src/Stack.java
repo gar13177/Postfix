@@ -72,6 +72,7 @@ public class Stack {
         return _array;
     }
     
+    @Override
     public String toString(){
         String cadena = "";
         for (int i = 0; i<_array.length; i++){
