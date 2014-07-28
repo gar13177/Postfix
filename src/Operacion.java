@@ -64,7 +64,7 @@ public class Operacion {
                 _pila.Push(Double.parseDouble(array[i]));
             }
             //se muestra el estado de la pila
-            System.out.prinln("Estado de la pila: ");
+            System.out.println("Estado de la pila: ");
             System.out.print(_pila);
         }
     }
