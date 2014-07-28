@@ -18,14 +18,18 @@ Pila que guarda los valores de las operaciones
 */
 
 public class Stack {
+    //atributos de la pila, arreglo
     private double[] _array;
     
+    
+    //constructores, uno sobrecargado
     public Stack(){}
     
     public Stack(double[] array){
         _array = array;
     }
     
+    //metodo push que mete un valor en la ultima posicion aumentando el tamaño del arreglo
     public void Push(double valor){
         double[] arrayTemp;
         try{
@@ -40,6 +44,8 @@ public class Stack {
         _array = arrayTemp;       
     }
     
+    //metodo pop que obtiene el primer elemento del arreglo y lo extrae
+    //reduce el tamaño del vector
     public double Pop(){
         if (_array.length == 0){
             System.out.println("Error, pila vacia");
@@ -56,6 +62,8 @@ public class Stack {
         }
     }
     
+    
+    //sets y gets
     public void setStack(double[] array){
         _array = array;
     }
